@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¿Yoselin Patricia Juárez Caracheo, puedo ser tu novio?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #ffe6f0;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #e60073;
+    }
+
+    #buttons {
+      margin-top: 50px;
+    }
+
+    button {
+      font-size: 1.5em;
+      padding: 15px 30px;
+      margin: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    #yes {
+      background-color: #ff66b2;
+      color: white;
+    }
+
+    #no {
+      background-color: #cccccc;
+      color: black;
+      position: absolute;
+    }
+
+    #message {
+      display: none;
+      margin-top: 40px;
+      font-size: 1.8em;
+      color: #cc0066;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <h1>¿Yoselin Patricia Juárez Caracheo, puedo ser tu novio?</h1>
+  <div id="buttons">
+    <button id="yes">Sí</button>
+    <button id="no">No</button>
+  </div>
+  <div id="message">💖 ¡Te prometo hacerte sonreír todos los días, mi princesa hermosa! 💖</div>
+
+  <script>
+    const noBtn = document.getElementById('no');
+    const yesBtn = document.getElementById('yes');
+    const message = document.getElementById('message');
+
+    function moveNoButton() {
+      const x = Math.floor(Math.random() * (window.innerWidth - 100));
+      const y = Math.floor(Math.random() * (window.innerHeight - 100));
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    }
+
+    // Mover el botón al intentar presionarlo
+    noBtn.addEventListener('mousedown', moveNoButton); // Computadoras
+    noBtn.addEventListener('touchstart', (e) => {      // Celulares
+      e.preventDefault();
+      moveNoButton();
+    });
+
+    // Mostrar mensaje si da clic en "Sí"
+    yesBtn.addEventListener('click', () => {
+      document.getElementById('buttons').style.display = 'none';
+      message.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
